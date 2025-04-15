@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for our website.">
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <title>Cordinal Services | TOS</title>
+    <link rel="stylesheet" href="../style/tos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" alt="Cordinal Services Logo" style="max-width: 100px; margin-bottom: 1rem;">
+    <h1>Terms of Service</h1>
+</header>
+<button id="menuButton" style="position: absolute; top: 100px; left: 75px;"><i class="fa fa-bars"></i></button>
+<aside>
+    <h2>Menu</h2>
+    <button onclick="window.location.href='../index.html'" style="display: block; margin-bottom: 0.5rem;">Home</button>
+    <button onclick="window.location.href='download.html'" style="display: block; margin-bottom: 0.5rem;">Downloads</button>
+    <button onclick="window.location.href='privacy.html'" style="display: block; margin-bottom: 0.5rem;">Privacy Policy</button>
+    <button onclick="window.location.href='services.html'" style="display: block; margin-bottom: 0.5rem;">Service Status</button>
+    <button><a href="https://discord.gg/Y3hdgTfjGq" style="color: white;">Support</a></button>
+</aside>
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.querySelector('aside');
+
+    sidebar.style.display = 'none'; // Initially hide the sidebar
+
+    menuButton.addEventListener('click', () => {
+        if (sidebar.style.display === 'none') {
+            sidebar.style.display = 'block';
+            sidebar.style.transition = 'all 0.5s slide-out'; // Add transition for smooth appearance
+        } else {
+            sidebar.style.display = 'none';
+        }
+    });
+</script>
+    <main>
+      <ul>
+        <p class="date">Effective Date: <strong>14.04.2025</strong> | Last Updated: <strong>14.04.2025</strong></p>
+      
+        <p>Welcome! By using our website, Discord bot, or any related services (collectively referred to as <strong>"Services"</strong>), you agree to these Terms of Service. Please read them carefully.</p>
+      
+        <h2>🌐 1. Use of Our Services</h2>
+        <p>
+          You agree to use our Services only in ways that comply with applicable law and these terms.<br>
+          Do not disrupt, harm, or exploit our systems or others'.<br>
+          Automated usage is not allowed unless clearly permitted.<br>
+          No harassment, spamming, or misuse of features.<br>
+        </p>
+
+      
+        <h2>🤖 2. Discord Bot Usage</h2>
+          <p>
+          By inviting or using our bot, you consent to its basic operation and any data necessary for functionality (e.g. user/server IDs).<br>
+          Abuse of the bot (e.g. for spam, exploits, or raids) is strictly forbidden.<br>
+          We reserve the right to remove the bot or restrict access at our discretion.<br></p>
+
+      
+          <h2>📊 3. Data Collection & Privacy</h2>
+          <p>
+          We may collect usage data (e.g. commands used, preferences, IDs) to improve services.<br>
+          We do not sell or share personal data with third parties.<br>
+          You can request your data be deleted by contacting us.<br>
+          See our <a href="privacy.html">Privacy Policy</a> for full details.<br></p>
+
+      
+          <h2>🚫 4. Prohibited Activities</h2>
+          <p>
+          No reverse-engineering, reselling, or repurposing our code or features.<br>
+          Don't promote or participate in hate, illegal activity, or abusive behavior.<br>
+          No exploiting bugs, features, or bots to harm others.<br></p>
+
+      
+          <h2>🛠️ 5. Availability & Changes</h2>
+          <p>
+          We may update or remove features at any time without prior notice.<br>
+          Changes to these terms will be posted here, and it’s your responsibility to stay informed.<br></p>
+
+      
+          <h2>⚖️ 6. Liability & Disclaimer</h2>
+          <p>
+          Our Services are offered "as-is" without any warranties or guarantees.<br>
+          We are not liable for loss, damage, or disruption caused by use or misuse.<br></p>
+
+      
+        <p>If you have any questions or concerns about these terms, please reach out:</p>
+        <p>Discord Support Server: <a href="https://discord.gg/Y3hdgTfjGq">discord.gg/cordinal</a></p>
+      </ul>
+    </main>
+</body>
+</html>

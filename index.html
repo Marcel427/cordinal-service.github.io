@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordinal Services | Home</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Cordial Services Logo" style="max-width: 100px; margin-bottom: 1rem;">
+        <h1>Welcome to Cordinal Services</h1>
+    </header>
+    <button id="menuButton" style="position: absolute; top: 100px; left: 75px;"><i class="fa fa-bars"></i></button>
+    <aside>
+        <h2>Menu</h2>
+        <button onclick="window.location.href='pages/download.html'" style="display: block; margin-bottom: 0.5rem;">Downloads</button>
+        <button onclick="window.location.href='./pages/tos.html'" style="display: block; margin-bottom: 0.5rem;">Terms Of Service</button>
+        <button onclick="window.location.href='pages/privacy.html'" style="display: block; margin-bottom: 0.5rem;">Privacy Policy</button>
+        <button onclick="window.location.href='pages/services.html'" style="display: block; margin-bottom: 0.5rem;">Service Status</button>
+        <button><a href="https://discord.gg/Y3hdgTfjGq" style="color: white;">Support</a></button>
+    </aside>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const sidebar = document.querySelector('aside');
+
+        sidebar.style.display = 'none'; // Initially hide the sidebar
+
+        menuButton.addEventListener('click', () => {
+            if (sidebar.style.display === 'none') {
+                sidebar.style.display = 'block';
+                sidebar.style.transition = 'all 0.5s ease-in-out'; // Add transition for smooth appearance
+            } else {
+                sidebar.style.display = 'none';
+            }
+        });
+    </script>
+    <main>
+        <ul>
+            <h2>About Us</h2>
+            <p>Cordial Services is dedicated to providing top-notch solutions tailored to your needs. 
+            Whether you're looking for professional assistance or innovative services, we are here to help.</p>
+            <p>Explore our offerings and experience the difference with Cordinal Services.</p>
+        </ul>
+        
+        <ul>
+            <section>
+            <h2>Projects</h2>
+                <ul style="display: flex; align-items: center; gap: 1rem;">
+                <img src="img/cordinal-bot.png" alt="Cordinal Bot" style="width: 150px; border-radius: 8px;">
+                <div style="text-align: left;">
+                    <h3><button><a href="https://discord.com/oauth2/authorize?client_id=1089921432080875591" style="color: white;">Cordinal Bot</a></button></h3>
+                    <p style="text-align: center;">The all-in-one bot for managing your community with ease. Features include moderation, automation, and more.</p>
+                </div>
+            </ul>
+            <ul style="display: flex; align-items: center; gap: 1rem; flex-direction: row-reverse;" >
+                <img src="img/Multi-Tool.png" alt="Cordinal Multi Tool" style="width: 150px; border-radius: 8px;">
+                <div style="text-align: right;">
+                    <h3><button><a href="./pages/download.html" style="color: white;">Cordinal Multi Tool</a></button></h3>
+                    <p style="text-align: center;">The all-around Multi Tool for Windows. Virus scanner, File checker, All-around updater, and more.</p>
+                </div>
+            </ul>
+            </section>
+        </ul>
+        </ul>
+        <ul>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us through our support channels.<br>
+            We are here to help you with any inquiries or issues you may have.<br>
+            Contact us <br><button style="background-color: transparent;"><a href="https://discord.gg/Y3hdgTfjGq"><img src="img/discord.png" style="width: 50px;"></a></button></p>
+        </ul>
+        </section>
+    </main>
+</body>
+</html>

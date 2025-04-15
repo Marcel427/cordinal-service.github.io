@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads</title>
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="stylesheet" href="../style/download.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <img src="../img/logo.png" alt="Cordinal Services Logo" style="max-width: 100px; margin-bottom: 1rem;">
+        <h1>Downloads</h1>
+    </header>
+    <button id="menuButton" style="position: absolute; top: 100px; left: 75px;"><i class="fa fa-bars"></i></button>
+        <aside>
+            <h2>Menu</h2>
+            <button onclick="window.location.href='../index.html'" style="display: block; margin-bottom: 0.5rem;">Home</button>
+            <button onclick="window.location.href='download.html'" style="display: block; margin-bottom: 0.5rem;">Downloads</button>
+            <button onclick="window.location.href='privacy.html'" style="display: block; margin-bottom: 0.5rem;">Privacy Policy</button>
+            <button onclick="window.location.href='services.html'" style="display: block; margin-bottom: 0.5rem;">Service Status</button>
+            <button><a href="https://discord.gg/Y3hdgTfjGq" style="color: white;">Support</a></button>
+        </aside>
+        <script>
+            const menuButton = document.getElementById('menuButton');
+            const sidebar = document.querySelector('aside');
+        
+            sidebar.style.display = 'none'; // Initially hide the sidebar
+        
+            menuButton.addEventListener('click', () => {
+                if (sidebar.style.display === 'none') {
+                    sidebar.style.display = 'block';
+                    sidebar.style.transition = 'all 0.5s slide-out'; // Add transition for smooth appearance
+                } else {
+                    sidebar.style.display = 'none';
+                }
+            });
+        </script>
+    <main>
+        <ul>
+            <h2>Available Downloads</h2>
+                <div class="download-section">
+                    <ul>
+                        <h3>Cordinal Multi Tool</h3>
+                        <button><a href="../downloads/Multi Tool (Updated 1.2).zip" download>Latest (Version 1.2)</a></button>
+                    </ul>
+                </div>
+        </ul>
+    </main>
+</body>
+</html>

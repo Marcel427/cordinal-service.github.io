@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <title>Cordinal Services | Status</title>
+    <link rel="stylesheet" href="../style/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header>
+        <img src="../img/logo.png" alt="Logo">
+        <h1>Services Status</h1>
+    </header>
+    <button id="menuButton" style="position: fixed; top: 100px; left: 75px;"><i class="fa fa-bars"></i></button>
+    <aside>
+        <h2>Menu</h2>
+        <button onclick="window.location.href='../index.html'" style="display: block; margin-bottom: 0.5rem;">Home</button>
+        <button onclick="window.location.href='download.html'" style="display: block; margin-bottom: 0.5rem;">Downloads</button>
+        <button onclick="window.location.href='tos.html'" style="display: block; margin-bottom: 0.5rem;">Terms Of Service</button>
+        <button onclick="window.location.href='privacy.html'" style="display: block; margin-bottom: 0.5rem;">Privacy Policy</button>
+        <button><a href="https://discord.gg/Y3hdgTfjGq" style="color: white;">Support</a></button>
+    </aside>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const sidebar = document.querySelector('aside');
+
+        sidebar.style.display = 'none'; // Initially hide the sidebar
+
+        menuButton.addEventListener('click', () => {
+            if (sidebar.style.display === 'none') {
+                sidebar.style.display = 'block';
+                sidebar.style.transition = 'all 0.5s ease-in-out'; // Add transition for smooth appearance
+            } else {
+                sidebar.style.display = 'none';
+            }
+        });
+    </script>
+    <main>
+        <ul>
+            <h2>Service Status</h2>
+            <h3 id="latestUpdate">Latest Update: </h3>
+            <div id="websiteStatus" class="status">Checking website status...</div>
+            <div id="botStatus" class="status">Checking bot status...</div><br>
+            <button id="refreshButton"><i class="fa fa-refresh"> Refresh</i></button>
+        </ul>
+    </main>
+    <script>
+        async function checkStatus() {
+            try {
+                const websiteResponse = await fetch('https://www.cordinal-services.com/');
+
+                if (websiteResponse.ok) {
+                    document.getElementById('websiteStatus').innerText = 'Website Online';
+                    document.getElementById('websiteStatus').style.backgroundColor = 'green';
+                } else {
+                    document.getElementById('websiteStatus').innerText = 'Website Offline';
+                    document.getElementById('websiteStatus').style.backgroundColor = 'red';
+                }
+
+                document.getElementById('botStatus').innerText = 'Bot Online';
+                document.getElementById('botStatus').style.backgroundColor = 'green';
+
+                document.getElementById("latestUpdate").innerText = `Latest Update: `+ (new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+            } catch (error) {
+                console.error('Error fetching status:', error);
+            }
+        }
+
+        // Call the function to check status on page load
+        window.onload = checkStatus;
+        // Add event listener to refresh button
+        document.getElementById('refreshButton').addEventListener('click', checkStatus);
+
+    </script>
+</body>
+</html>
