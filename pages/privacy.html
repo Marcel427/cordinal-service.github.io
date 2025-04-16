@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/logo.png" type="image/png">
-    <title>Cordinal Services | TOS</title>
-    <link rel="stylesheet" href="../style/privacy.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cordinal Services | Privacy</title>
+  <link rel="icon" href="../img/logo.png" type="image/png" sizes="16x16" />
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 <body>
-    <header>
-        <img src="../img/logo.png" alt="Cordinal Services Logo" style="max-width: 100px; margin-bottom: 1rem;">
-        <h1>Privacy Policy</h1>
-    </header>
-    <button id="menuButton" style="position: absolute; top: 100px; left: 75px;"><i class="fa fa-bars"></i></button>
-<aside>
+  <aside id="sidebar" class="closed">
     <h2>Menu</h2>
-    <button onclick="window.location.href='../index.html'" style="display: block; margin-bottom: 0.5rem;">Home</button>
-    <button onclick="window.location.href='download.html'" style="display: block; margin-bottom: 0.5rem;">Downloads</button>
-    <button onclick="window.location.href='privacy.html'" style="display: block; margin-bottom: 0.5rem;">Privacy Policy</button>
-    <button onclick="window.location.href='services.html'" style="display: block; margin-bottom: 0.5rem;">Service Status</button>
-    <button><a href="https://discord.gg/Y3hdgTfjGq" style="color: white;">Support</a></button>
-</aside>
-<script>
-    const menuButton = document.getElementById('menuButton');
-    const sidebar = document.querySelector('aside');
+    <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="./download.html"><i class="fas fa-download"></i> Download</a>
+    <a href="#"><i class="fas fa-briefcase"></i> Privacy Policy</a>
+    <a href="./tos.html"><i class="fas fa-envelope"></i> Terms of Service</a>
+    <a href="./services.html"><i class="fas fa-wrench"></i> Service Status</a>
+    <a href="https://discord.gg/Y3hdgTfjGq"><i class="fab fa-discord"></i> Discord</a>
+  </aside>
 
-    sidebar.style.display = 'none'; // Initially hide the sidebar
+  <div class="main-content full" id="mainContent">
+    <header>
+      <i class="fas fa-bars menu-toggle" id="toggleBtn"></i>
+    <p>
+      <h1>Cordinal Services</h1>
+    </p>
+    <button><img src="../img/logo.png" alt="Logo" class="logo"/></button>
+    </header>
 
-    menuButton.addEventListener('click', () => {
-        if (sidebar.style.display === 'none') {
-            sidebar.style.display = 'block';
-            sidebar.style.transition = 'all 0.5s slide-out'; // Add transition for smooth appearance
-        } else {
-            sidebar.style.display = 'none';
-        }
-    });
-</script>
     <main>
         <ul>
             <h1>🔐 Privacy Policy</h1>
@@ -86,5 +78,17 @@
 
         </ul>
     </main>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('closed');
+      mainContent.classList.toggle('full');
+    });
+  </script>
 </body>
 </html>
