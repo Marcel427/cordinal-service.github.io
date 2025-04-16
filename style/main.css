@@ -59,6 +59,13 @@
     background-blend-mode: overlay;
   }
 
+  main {
+    display: absolute;
+    text-align: center;
+    align-items: center;
+
+  }
+
   main p {
     font-size: 1.2rem;
     margin: 0 auto;
@@ -214,4 +221,37 @@ section ul:hover {
     .main-content {
       margin-left: 0;
     }
+  }
+
+  main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  main form input, main form textarea {
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+  }
+
+  main form select {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 25%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+    text-align: center;
   }

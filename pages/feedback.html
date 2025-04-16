@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cordinal Services | Feedback</title>
+  <link rel="icon" href="../img/logo.png" type="image/png" sizes="16x16" />
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+  <aside id="sidebar" class="closed">
+    <h2>Menu</h2>
+    <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="./download.html"><i class="fas fa-download"></i> Download</a>
+    <a href="./privacy.html"><i class="fas fa-briefcase"></i> Privacy Policy</a>
+    <a href="./tos.html"><i class="fas fa-envelope"></i> Terms of Service</a>
+    <a href="./services.html"><i class="fas fa-wrench"></i> Service Status</a>
+    <a href="#"><i class="fas fa-comment"></i> Feedback</a>
+    <a href="https://discord.gg/Y3hdgTfjGq"><i class="fab fa-discord"></i> Discord</a>
+  </aside>
+
+  <div class="main-content full" id="mainContent">
+    <header>
+      <i class="fas fa-bars menu-toggle" id="toggleBtn"></i>
+    <p>
+      <h1>Cordinal Services</h1>
+    </p>
+    <button><img src="../img/logo.png" alt="Logo" class="logo"/></button>
+    </header>
+
+    <main>
+        <h1>Feedback</h1>
+        <p>We value your feedback! Please let us know your thoughts.</p>
+        <ul>
+            <form id="feedbackForm" action="https://discord.com/api/webhooks/1361925432794153102/zNyU1KhEeoRtk9DqgkdEto6YtefvNkXDfPXzZ2fnWj5lV8-laXpDhiEF7eFVKpibl10x" method="POST">
+                <label>Username:</label>
+                <input type="text" id="username" name="username" required></input>
+                <label>Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+                
+            <button type="submit" id="feedbackSubmit">Send</button>
+        </ul>
+        <script>
+        document.getElementById("feedbackSubmit").addEventListener("click", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var msg = document.getElementById("feedback").value;
+            
+            sendMessage(username, msg);
+        });
+
+            async function sendMessage(username, msg) {
+                try {
+                    const webhookUrl = "https://discord.com/api/webhooks/1361939400442773637/Dg9gAfqjZMN41tnyDVZEKH3yag2cyI4_5QaqyYQWdLtWUWrbZ2_U-6xqjGFEojlcZGhY";
+                    const payload = {
+                        username: "Website Feedback",
+                        avatar_url: "../img/logo.png",
+                        content: ">>> **Feedback from website**\n\nFeedback:" + msg + "\n\nUsername: " + username,
+                    };
+
+                    const response = await fetch(webhookUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                    }
+
+                    alert("Feedback sent successfully!");
+                } catch (error) {
+                    console.error("Failed to send feedback:", error);
+                    alert("Failed to send feedback. Please try again later.");
+                }
+            }
+        </script>
+    </main>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('closed');
+      mainContent.classList.toggle('full');
+    });
+  </script>
+</body>
+</html>
