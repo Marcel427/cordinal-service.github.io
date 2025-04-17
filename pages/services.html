@@ -18,7 +18,7 @@
     <a href="./tos.html"><i class="fas fa-envelope"></i> Terms of Service</a>
     <a href="#"><i class="fas fa-wrench"></i> Service Status</a>
     <a href="./feedback.html"><i class="fas fa-comment"></i> Feedback</a>
-    <a href="https://discord.gg/Y3hdgTfjGq"><i class="fab fa-discord"></i> Discord</a>
+    <a href="./support.html"><i class="fas fa-phone"></i> Support</a>
   </aside>
 
   <div class="main-content full" id="mainContent">
@@ -33,9 +33,11 @@
     <main>
         <ul>
             <h2>Service Status</h2>
-            <h3 id="latestUpdate">Latest Update: </h3>
-            <div id="websiteStatus" class="status">Checking website status...</div>
-            <div id="botStatus" class="status">Checking bot status...</div><br>
+            <h3 id="latestUpdate"><b>Latest Update:</b> </h3>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+              <div id="websiteStatus" class="status" style="width: 300;">Checking website status...</div>
+              <div id="botStatus" class="status" style="width: 300;">Checking bot status...</div>
+            </div><br>
             <button id="refreshButton"><i class="fa fa-refresh"> Refresh</i></button>
         </ul>
     </main>
